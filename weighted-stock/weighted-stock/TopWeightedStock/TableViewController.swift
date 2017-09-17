@@ -25,16 +25,22 @@ class TableViewController: UITableViewController {
                 print("response = \(String(describing: response))")
             } else {
                 let responseStr = String(data: data, encoding: .utf8)!
-                print("response \(responseStr)")
+                //print("response \(responseStr)")
+                
+                if let doc = HTML(html: responseStr, encoding: .utf8) {
+
+                    for (index, repo) in doc.xpath("//tr[@valign='bottom']").enumerated() {
+                        //print("index \(index) , text : \()")
+                        self.toParseInternal(repo.toHTML!)
+                        if(index == 1) {
+                            break
+                        }
+                    }
+                }
             }
         }
 
         api.start()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,14 +61,35 @@ class TableViewController: UITableViewController {
     }
 
     @IBAction func backTouchUp(_ sender: Any) {
+        toTestKanna()
         dismiss(animated: true, completion: nil)
     }
     
-    func toTestKanna() {
-        let html = "<html><head></head><body><ul><li><input type='image' name='input1' value='string1value' class='abc' /></li><li><input type='image' name='input2' value='string2value' class='def' /></li></ul><span class='spantext'><b>Hello World 1</b></span><span class='spantext'><b>Hello World 2</b></span><a href='example.com'>example(English)</a><a href='example.co.jp'>example(JP)</a></body>"
-        
+    func toParseInternal(_ html : String) {
         if let doc = HTML(html: html, encoding: .utf8) {
-            print(doc.title)
+            
+            // Search for nodes by XPath
+            for (index, element) in doc.xpath("//td").enumerated() {
+                
+                switch index % 4 {
+                case 0:
+                    print("排名 \(element.text!)")
+                case 1:
+                    print("股號 \(element.text!)")
+                case 2:
+                    print("公司名 \(element.text!)")
+                case 3:
+                    print("佔比 \(element.text!)")
+                    
+                default:
+                    print("Unknow error")
+                }
+            }
+        }
+    }
+    
+    func toParseHtml(_ html : String) {
+        if let doc = HTML(html: html, encoding: .utf8) {
             
             // Search for nodes by XPath
             for link in doc.xpath("//a | //link") {
@@ -70,6 +97,12 @@ class TableViewController: UITableViewController {
                 print(link["href"])
             }
         }
+    }
+    
+    func toTestKanna() {
+        let html = "<html><head></head><body><ul><li><input type='image' name='input1' value='string1value' class='abc' /></li><li><input type='image' name='input2' value='string2value' class='def' /></li></ul><span class='spantext'><b>Hello World 1</b></span><span class='spantext'><b>Hello World 2</b></span><a href='example.com'>example(English)</a><a href='example.co.jp'>example(JP)</a></body>"
+        
+        toParseHtml(html)
     }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
