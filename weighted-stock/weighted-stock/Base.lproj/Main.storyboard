@@ -62,10 +62,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="權重TOP 30" id="Cxk-2G-u2B">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="RY5-PP-EEv">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="A8X-h5-9sb">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="A8X-h5-9sb">
                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="返回"/>
                                 <connections>
                                     <action selector="backTouchUp:" destination="uFW-kG-NAM" eventType="touchUpInside" id="TiR-Qy-eSL"/>
                                 </connections>
