@@ -1,0 +1,3 @@
+[submodule "weighted-stock/Library/Kanna"]
+	path = weighted-stock/Library/Kanna
+	url = https://github.com/tid-kijyun/Kanna.git

@@ -15,6 +15,7 @@
 		180FF1181F6E0A520079881B /* weighted_stockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FF1171F6E0A520079881B /* weighted_stockTests.swift */; };
 		180FF1231F6E0A530079881B /* weighted_stockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FF1221F6E0A530079881B /* weighted_stockUITests.swift */; };
 		180FF1331F6E1D7E0079881B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FF1311F6E1D7E0079881B /* TableViewController.swift */; };
+		180FF14F1F6E52330079881B /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180FF14C1F6E520F0079881B /* Kanna.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 180FF0FE1F6E0A520079881B;
 			remoteInfo = "weighted-stock";
+		};
+		180FF14B1F6E520F0079881B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 180FF1461F6E520F0079881B /* Kanna.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1E7ADC331DF4F3FC006E1815;
+			remoteInfo = Kanna;
+		};
+		180FF14D1F6E520F0079881B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 180FF1461F6E520F0079881B /* Kanna.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1E7ADC3C1DF4F3FC006E1815;
+			remoteInfo = Tests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -49,6 +64,7 @@
 		180FF1221F6E0A530079881B /* weighted_stockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weighted_stockUITests.swift; sourceTree = "<group>"; };
 		180FF1241F6E0A530079881B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180FF1311F6E1D7E0079881B /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		180FF1461F6E520F0079881B /* Kanna.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kanna.xcodeproj; path = Library/Kanna/Kanna.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180FF14F1F6E52330079881B /* Kanna.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +96,7 @@
 		180FF0F61F6E0A520079881B = {
 			isa = PBXGroup;
 			children = (
+				180FF1461F6E520F0079881B /* Kanna.xcodeproj */,
 				180FF1011F6E0A520079881B /* weighted-stock */,
 				180FF1161F6E0A520079881B /* weighted-stockTests */,
 				180FF1211F6E0A530079881B /* weighted-stockUITests */,
@@ -134,6 +152,15 @@
 				180FF1311F6E1D7E0079881B /* TableViewController.swift */,
 			);
 			path = TopWeightedStock;
+			sourceTree = "<group>";
+		};
+		180FF1471F6E520F0079881B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				180FF14C1F6E520F0079881B /* Kanna.framework */,
+				180FF14E1F6E520F0079881B /* Tests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +259,12 @@
 			mainGroup = 180FF0F61F6E0A520079881B;
 			productRefGroup = 180FF1001F6E0A520079881B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 180FF1471F6E520F0079881B /* Products */;
+					ProjectRef = 180FF1461F6E520F0079881B /* Kanna.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				180FF0FE1F6E0A520079881B /* weighted-stock */,
@@ -240,6 +273,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		180FF14C1F6E520F0079881B /* Kanna.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Kanna.framework;
+			remoteRef = 180FF14B1F6E520F0079881B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		180FF14E1F6E520F0079881B /* Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Tests.xctest;
+			remoteRef = 180FF14D1F6E520F0079881B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		180FF0FD1F6E0A520079881B /* Resources */ = {
@@ -333,7 +383,7 @@
 		180FF1251F6E0A530079881B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -371,6 +421,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"<Multiple",
+					"values>",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -384,7 +439,7 @@
 		180FF1261F6E0A530079881B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -416,6 +471,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"<Multiple",
+					"values>",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
