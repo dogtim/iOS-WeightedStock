@@ -16,6 +16,7 @@
 		180FF1231F6E0A530079881B /* weighted_stockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FF1221F6E0A530079881B /* weighted_stockUITests.swift */; };
 		180FF1331F6E1D7E0079881B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FF1311F6E1D7E0079881B /* TableViewController.swift */; };
 		180FF14F1F6E52330079881B /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180FF14C1F6E520F0079881B /* Kanna.framework */; };
+		180FF1521F6E5DC10079881B /* WeightedStockListApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FF1511F6E5DC10079881B /* WeightedStockListApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		180FF1241F6E0A530079881B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180FF1311F6E1D7E0079881B /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		180FF1461F6E520F0079881B /* Kanna.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kanna.xcodeproj; path = Library/Kanna/Kanna.xcodeproj; sourceTree = "<group>"; };
+		180FF1511F6E5DC10079881B /* WeightedStockListApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightedStockListApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		180FF1011F6E0A520079881B /* weighted-stock */ = {
 			isa = PBXGroup;
 			children = (
+				180FF1501F6E5D9E0079881B /* Api */,
 				180FF1301F6E1C9A0079881B /* TopWeightedStock */,
 				180FF1021F6E0A520079881B /* AppDelegate.swift */,
 				180FF1041F6E0A520079881B /* ViewController.swift */,
@@ -161,6 +164,14 @@
 				180FF14E1F6E520F0079881B /* Tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		180FF1501F6E5D9E0079881B /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				180FF1511F6E5DC10079881B /* WeightedStockListApi.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180FF1521F6E5DC10079881B /* WeightedStockListApi.swift in Sources */,
 				180FF1051F6E0A520079881B /* ViewController.swift in Sources */,
 				180FF1331F6E1D7E0079881B /* TableViewController.swift in Sources */,
 				180FF1031F6E0A520079881B /* AppDelegate.swift in Sources */,
