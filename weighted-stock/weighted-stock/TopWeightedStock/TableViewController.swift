@@ -10,7 +10,9 @@ import UIKit
 import Kanna
 
 class TableViewController: UITableViewController {
-        
+
+    var stocks = [Stock]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,6 +34,7 @@ class TableViewController: UITableViewController {
                     for (index, repo) in doc.xpath("//tr[@valign='bottom']").enumerated() {
                         //print("index \(index) , text : \()")
                         self.toParseInternal(repo.toHTML!)
+                        self.showStocks()
                         if(index == 1) {
                             break
                         }
@@ -65,21 +68,35 @@ class TableViewController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    func showStocks() {
+        for stock in stocks {
+            print(stock.name)
+        }
+    }
+    
     func toParseInternal(_ html : String) {
         if let doc = HTML(html: html, encoding: .utf8) {
+            var stock = Stock()
             
             // Search for nodes by XPath
             for (index, element) in doc.xpath("//td").enumerated() {
+                print("index \(index)")
                 
                 switch index % 4 {
                 case 0:
                     print("排名 \(element.text!)")
+                    stock.rank = element.text!
                 case 1:
                     print("股號 \(element.text!)")
+                    stock.number = element.text!
                 case 2:
                     print("公司名 \(element.text!)")
+                    stock.name = element.text!
                 case 3:
                     print("佔比 \(element.text!)")
+                    stock.weighted = element.text!
+                    stocks.insert(stock, at: (index / 4))
+                    stock = Stock()
                     
                 default:
                     print("Unknow error")

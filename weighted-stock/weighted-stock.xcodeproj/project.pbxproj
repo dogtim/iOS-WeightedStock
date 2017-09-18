@@ -17,6 +17,7 @@
 		180FF1331F6E1D7E0079881B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FF1311F6E1D7E0079881B /* TableViewController.swift */; };
 		180FF14F1F6E52330079881B /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180FF14C1F6E520F0079881B /* Kanna.framework */; };
 		180FF1521F6E5DC10079881B /* WeightedStockListApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FF1511F6E5DC10079881B /* WeightedStockListApi.swift */; };
+		18A781E51F700514002C8633 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A781E41F700514002C8633 /* Stock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		180FF1311F6E1D7E0079881B /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		180FF1461F6E520F0079881B /* Kanna.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kanna.xcodeproj; path = Library/Kanna/Kanna.xcodeproj; sourceTree = "<group>"; };
 		180FF1511F6E5DC10079881B /* WeightedStockListApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightedStockListApi.swift; sourceTree = "<group>"; };
+		18A781E41F700514002C8633 /* Stock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		180FF1011F6E0A520079881B /* weighted-stock */ = {
 			isa = PBXGroup;
 			children = (
+				18A781E31F700514002C8633 /* Stock */,
 				180FF1501F6E5D9E0079881B /* Api */,
 				180FF1301F6E1C9A0079881B /* TopWeightedStock */,
 				180FF1021F6E0A520079881B /* AppDelegate.swift */,
@@ -172,6 +175,14 @@
 				180FF1511F6E5DC10079881B /* WeightedStockListApi.swift */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		18A781E31F700514002C8633 /* Stock */ = {
+			isa = PBXGroup;
+			children = (
+				18A781E41F700514002C8633 /* Stock.swift */,
+			);
+			path = Stock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +348,7 @@
 				180FF1521F6E5DC10079881B /* WeightedStockListApi.swift in Sources */,
 				180FF1051F6E0A520079881B /* ViewController.swift in Sources */,
 				180FF1331F6E1D7E0079881B /* TableViewController.swift in Sources */,
+				18A781E51F700514002C8633 /* Stock.swift in Sources */,
 				180FF1031F6E0A520079881B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
