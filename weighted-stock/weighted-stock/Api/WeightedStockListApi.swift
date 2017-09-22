@@ -19,10 +19,7 @@ class WeightedStockListApi {
         cancel()
         
         sessionTask = URLSession.shared.dataTask(with: request, completionHandler:self.getCompletionHandler())
-        
-        if let task = sessionTask {
-            task.resume()
-        }
+        sessionTask?.resume()
     }
     
     private func getCompletionHandler() -> ((Data?, URLResponse?, Error?)->Void) {
@@ -41,61 +38,51 @@ class WeightedStockListApi {
             } else {
                 let responseStr = String(data: data, encoding: .utf8)!
                 
-                if let doc = HTML(html: responseStr, encoding: .utf8) {
-                    
-                    for (index, repo) in doc.xpath("//tr[@valign='bottom']").enumerated() {
-                        self.toParseInternal(repo.toHTML!)
-                        if(index == 29) {
-                            break
-                        }
-                    }
-                    DispatchQueue.main.async {
-                        self.apiDelegate?.complete(api: self)
+                let doc = try? HTML(html: responseStr, encoding: .utf8)
+                // Parse html content
+                for (index, repo) in (doc?.xpath("//tr[@valign='bottom']").enumerated())! {
+                    self.toParseInternal(repo.toHTML!)
+                    if(index == 29) {
+                        break
                     }
                 }
+                DispatchQueue.main.async {
+                    self.apiDelegate?.complete(api: self)
+                }
+                
             }
         }
     }
     
     func cancel() {
-        
-        if let task = sessionTask {
-            task.cancel()
-        }
+        sessionTask?.cancel()
     }
     
     private func toParseInternal(_ html : String) {
-        if let doc = HTML(html: html, encoding: .utf8) {
-            var stock = Stock()
+        
+        let doc = try? HTML(html: html, encoding: .utf8)
+        var stock = Stock()
+        // Parse html content
+        for (index, element) in (doc?.xpath("//td").enumerated())! {
             
-            // Search for nodes by XPath
-            for (index, element) in doc.xpath("//td").enumerated() {
-                
-                switch index % 4 {
-                case 0:
-                    stock.rank = Int(element.text!)!
-                case 1:
-                    stock.number = element.text!
-                case 2:
-                    stock.name = element.text!
-                case 3:
-                    stock.weighted = element.text!
-                    if(stock.rank <= 30) {
-                        stocks.append(stock)
-                    }
-                    stock = Stock()
-                default:
-                    print("Unknow error")
+            switch index % 4 {
+            case 0:
+                stock.rank = Int(element.text!)!
+            case 1:
+                stock.number = element.text!
+            case 2:
+                stock.name = element.text!
+            case 3:
+                stock.weighted = element.text!
+                if(stock.rank <= 30) {
+                    stocks.append(stock)
                 }
+                stock = Stock()
+            default:
+                print("Unknow error")
             }
         }
+        
     }
     
-    
-    private func showStocks() {
-        print("stock count \(stocks.count)")
-        for stock in stocks {
-            print(stock.name)
-        }
-    }
 }

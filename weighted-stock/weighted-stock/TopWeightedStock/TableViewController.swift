@@ -10,10 +10,10 @@ import UIKit
 
 class TableViewController: UITableViewController {
     var stocks = [Stock]()
-
+    let CELL_IDENTIFIER : String = "Cell"
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: CELL_IDENTIFIER)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -23,7 +23,6 @@ class TableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -34,7 +33,7 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_IDENTIFIER, for: indexPath) as UITableViewCell
         
         if let myLabel = cell.textLabel {
             myLabel.text =
