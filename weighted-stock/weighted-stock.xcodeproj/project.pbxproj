@@ -19,6 +19,7 @@
 		180FF1521F6E5DC10079881B /* WeightedStockListApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FF1511F6E5DC10079881B /* WeightedStockListApi.swift */; };
 		18A781E51F700514002C8633 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A781E41F700514002C8633 /* Stock.swift */; };
 		18A781EA1F70A1FA002C8633 /* ApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A781E91F70A1FA002C8633 /* ApiProtocol.swift */; };
+		18DA63E81F75EC2B00B57E2A /* Kanna.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 180FF14C1F6E520F0079881B /* Kanna.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +51,28 @@
 			remoteGlobalIDString = 1E7ADC3C1DF4F3FC006E1815;
 			remoteInfo = Tests;
 		};
+		18DA63E91F75EC2B00B57E2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 180FF1461F6E520F0079881B /* Kanna.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E7ADC321DF4F3FC006E1815;
+			remoteInfo = Kanna;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		18DA63EB1F75EC2B00B57E2A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				18DA63E81F75EC2B00B57E2A /* Kanna.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		180FF0FF1F6E0A520079881B /* weighted-stock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weighted-stock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,10 +220,12 @@
 				180FF0FB1F6E0A520079881B /* Sources */,
 				180FF0FC1F6E0A520079881B /* Frameworks */,
 				180FF0FD1F6E0A520079881B /* Resources */,
+				18DA63EB1F75EC2B00B57E2A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				18DA63EA1F75EC2B00B57E2A /* PBXTargetDependency */,
 			);
 			name = "weighted-stock";
 			productName = "weighted-stock";
@@ -389,6 +413,11 @@
 			target = 180FF0FE1F6E0A520079881B /* weighted-stock */;
 			targetProxy = 180FF11F1F6E0A530079881B /* PBXContainerItemProxy */;
 		};
+		18DA63EA1F75EC2B00B57E2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Kanna;
+			targetProxy = 18DA63E91F75EC2B00B57E2A /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -531,6 +560,7 @@
 		180FF1281F6E0A530079881B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = S35JP8FRX6;
@@ -547,6 +577,7 @@
 		180FF1291F6E0A530079881B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = S35JP8FRX6;
