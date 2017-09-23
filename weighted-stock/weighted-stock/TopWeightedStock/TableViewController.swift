@@ -46,9 +46,13 @@ class TableViewController: UITableViewController {
     }
     
     @IBAction func backTouchUp(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "idFirstSegueUnwind", sender: self)
     }
     
+    @IBAction func returnFromSegueActions(sender: UIStoryboardSegue){
+        
+    }
 }
 
 extension TableViewController: ApiProtocol {

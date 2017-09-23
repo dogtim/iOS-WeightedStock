@@ -19,5 +19,30 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    override func segueForUnwinding(to toViewController: UIViewController, from fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue {
+        if let id = identifier{
+            if id == "idFirstSegueUnwind" {
+                let unwindSegue = UnwindSegueFromRight(identifier: id, source: fromViewController, destination: toViewController, performHandler: { () -> Void in
+                    
+                })
+                return unwindSegue
+            }
+        }
+        
+        return super.segueForUnwinding(to: toViewController, from: fromViewController, identifier: identifier)!
+    }
+    
+    @IBAction func returnFromSegueActions(sender: UIStoryboardSegue){
+        if sender.identifier == "idFirstSegueUnwind" {
+            let originalColor = self.view.backgroundColor
+            self.view.backgroundColor = UIColor.red
+            
+            UIView.animate(withDuration: 1.0, animations: { () -> Void in
+                self.view.backgroundColor = originalColor
+            })
+        }
+    }
 }
 

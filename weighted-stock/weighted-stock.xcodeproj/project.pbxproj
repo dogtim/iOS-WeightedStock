@@ -22,6 +22,7 @@
 		18DA63EF1F75FB8400B57E2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180FF1061F6E0A520079881B /* Main.storyboard */; };
 		18DA63F01F75FC0200B57E2A /* SegueFromLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA63ED1F75F8D200B57E2A /* SegueFromLeft.swift */; };
 		18DA63F21F75FD8A00B57E2A /* SegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA63F11F75FD8900B57E2A /* SegueFromRight.swift */; };
+		18DA63F41F76379B00B57E2A /* UnwindSegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA63F31F76379B00B57E2A /* UnwindSegueFromRight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		18A781E91F70A1FA002C8633 /* ApiProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiProtocol.swift; sourceTree = "<group>"; };
 		18DA63ED1F75F8D200B57E2A /* SegueFromLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueFromLeft.swift; sourceTree = "<group>"; };
 		18DA63F11F75FD8900B57E2A /* SegueFromRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueFromRight.swift; sourceTree = "<group>"; };
+		18DA63F31F76379B00B57E2A /* UnwindSegueFromRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnwindSegueFromRight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 			children = (
 				18DA63F11F75FD8900B57E2A /* SegueFromRight.swift */,
 				18DA63ED1F75F8D200B57E2A /* SegueFromLeft.swift */,
+				18DA63F31F76379B00B57E2A /* UnwindSegueFromRight.swift */,
 			);
 			path = Segue;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				180FF1331F6E1D7E0079881B /* TableViewController.swift in Sources */,
 				18A781E51F700514002C8633 /* Stock.swift in Sources */,
 				18A781EA1F70A1FA002C8633 /* ApiProtocol.swift in Sources */,
+				18DA63F41F76379B00B57E2A /* UnwindSegueFromRight.swift in Sources */,
 				180FF1031F6E0A520079881B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
